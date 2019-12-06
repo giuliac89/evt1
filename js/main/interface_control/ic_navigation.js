@@ -1135,9 +1135,16 @@ function bindFilterOptionClick() {
 				var currFrame = jQueryEl.parents("div[id*='frame']");
 				var currentEe = currFrame.find('.main_ee_select .label_selected').attr('data-value'); 
 				var currEeKey = currFrame.find('.main_ee_select .option[data-value="'+currentEe+'"]').attr('data-key');
-				currFrame
-					.find("." + selectorForActivation + ", ." + currEeKey + "-" + selectorForActivation)
-					.toggleClass('list_active');
+				var foundElements = currFrame.find("." + selectorForActivation + ", ." + currEeKey + "-" + selectorForActivation);
+				
+				if (htmlEl.dataset.type === undefined) {
+					foundElements = currFrame.find("." + selectorForActivation + ".no-info, ." + currEeKey + "-" + selectorForActivation + '.no-info');
+				}
+				else {
+					foundElements = currFrame.find("." + selectorForActivation + ":not(.no-info), ." + currEeKey + "-" + selectorForActivation + ':not(.no-info)');
+				}
+				foundElements.toggleClass('list_active');
+				
 				jQueryEl.siblings(".option[data-value='clear']").removeClass('selected');
 				jQueryEl.siblings(".option[data-value='all']").removeClass('selected');
 	
