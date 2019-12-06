@@ -2,3 +2,175 @@
  * EN: This file has been prepared for you to add your personal CSS styles
  * IT: Questo file è stato predisposto per accogliere regole CSS personalizzate
  */
+ 
+ /*** Welcome box ***/
+#welcomeInfo {
+    height: 100%;
+    overflow: auto;
+}
+#welcomeInfo_content_bottom {
+    position: relative;
+}
+.dialog .title.main {
+    height: auto;
+}
+.dialog .content ul {
+    padding-left: 18px;
+    margin-bottom: 15px;
+}
+.dialog .content ul li {
+    list-style: initial;
+}
+.dialog .content p {
+    margin-bottom: 15px;
+}
+
+/*** Inline notes ***/
+.popup.image,
+#front_cont .front > .title.original {
+    display: none;
+}
+#headerInfo_box_tabs .title {
+    display: inline-block;
+}
+
+/*** Thumbnails ***/
+#thumb_cont figure figcaption {
+    font-size: 17px;
+    word-break: break-all;
+}
+
+/*** Additions and deletions ***/
+span[data-tagname = "del"][data-rend = "strikethrough"] {
+    background-color: transparent;
+    text-decoration: line-through;
+}
+span[data-tagname = "add"][data-rend = "underline"] {
+    background-color: transparent;
+    text-decoration: underline;
+}
+span.dipl-add,
+span[data-tagname = "add"][data-rend = "pencil"] {
+    background-color: #bdecb6;
+}
+span[data-tagname = "add"][data-rend = "ink"] {
+    background-color: #d8d8d8;
+}
+span[data-tagname = "add"][data-rend = "red"] {
+    background-color: #ffa5a5;
+}
+
+/*** Catnum ***/
+.catnum + * {
+    display: inline;
+}
+.catnum:before {
+    content: '';
+    display: block;
+    margin-top: 25px;
+}
+
+/*** Selectors ***/
+.option_container.up,
+.main_list_select {
+    min-width: 130px !important;
+}
+.option_container.up {
+    overflow-x: hidden;
+}
+.option_container.up .groupTitle {
+    display: inline-block;
+    overflow: visible;
+    line-height: 1.15;
+}
+.like_select .groupTitle,
+.like_select .option {
+    line-height: 22px;
+}
+span.popup {
+    display: inline;
+}
+/* Place names */
+.doc.current span.placeName.no-info.list_active,
+.doc.current span.placeName.no-info:hover,
+.doc.current span.placeName.list_active span.trigger,
+.doc.current span.placeName.over > span.trigger,
+.doc.current span.placeName.opened > span.trigger {
+    background-color: #ffd27f;
+}
+.option[data-value = "placeName"] .filter_color {
+    color: #ffd27f;
+}
+/*  Notes */
+.option[data-value = "note"] .filter_color {
+    color: lightblue;
+}
+.note-selector:hover,
+.note-selector.list_active {
+    background-color: lightblue;
+}
+/* Bibl */
+.bibl-selector {
+    display: inline;
+    font-size: 100%;
+    margin: 0;
+}
+.bibl-selector:hover
+.bibl-selector.list_active {
+    background-color: #5593dc;
+}
+.option[data-value = "bibl"] .filter_color {
+    color: #5593dc;
+}
+/* Materials */
+.material-selector:hover,
+.material-selector.list_active {
+    background-color: #e982e3;
+}
+.option[data-value = "material"] .filter_color {
+    color: #e982e3;
+}
+/* Labels */
+.label-selector:hover,
+.label-selector.list_active {
+    background-color: #8cdbda;
+}
+.option[data-value = "label"] .filter_color {
+    color: #8cdbda;
+}
+/* Measure */
+.measure-selector:not([data-type]).no-info.list_active,
+.measure-selector:not([data-type]).no-info:hover,
+.measure-selector:not([data-type]).list_active,
+.measure-selector:not([data-type]).list_active span.trigger,
+.measure-selector:not([data-type]).over > span.trigger,
+.measure-selector:not([data-type]).opened > span.trigger {
+    background-color: #E8E674!important;
+    cursor: initial!important;
+}
+.option[data-value = "measure"] .filter_color {
+    color: #E8E674;
+}
+/* Quantity measure */
+.measure-selector[data-type="quantity"].no-info.list_active,
+.measure-selector[data-type="quantity"].no-info:hover,
+.measure-selector[data-type="quantity"].list_active,
+.measure-selector[data-type="quantity"].list_active span.trigger,
+.measure-selector[data-type="quantity"].over > span.trigger,
+.measure-selector[data-type="quantity"].opened > span.trigger {
+    background-color: #CFA2EF!important;
+}
+.option[data-value = "measure"][data-type="quantity"] .filter_color {
+    color: #CFA2EF;
+}
+/* Dates */
+.doc.current span.date.list_active,
+.doc.current span.date:hover,
+.doc.current span.date.list_active span.trigger,
+.doc.current span.date.over > span.trigger,
+.doc.current span.date.opened > span.trigger {
+    background-color: #77ab9e;
+}
+.option[data-value = "date"] .filter_color {
+    color: #77ab9e;
+}
