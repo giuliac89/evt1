@@ -37,28 +37,52 @@
 	<!-- EN: Main web site for digital edition -->
 	<!-- IT: Sito web principale dell'edizione digitale -->
 	<!-- default: '' -->
-	<xsl:param name="webSite" select="'http://piccolabdr.humnet.unipi.it/'"/>
+	<xsl:param name="webSite" select="'https://reconstructingsloane.org/enlightenmentarchitectures/'"/>
 
 	<!-- EN: Edition title -->
 	<!-- IT: Titolo edizione -->
 	<!-- default: 'Codex Viewer' -->
-	<xsl:param name="index_title" select="'Le Théâtre Italien di Gherardi'"/>
+	<xsl:param name="index_title" select="'Fossils I'"/>
 
 	<!-- EN: Welcome Message -->
 	<!-- IT: Messaggio di benvenuto -->
 	<!-- default: 'Welcome to an edition created with EVT' -->
 	<xsl:param name="welcomeMsg">
 		<div>
-			<p class="title main">Welcome to an edition created with EVT!</p>
+			<p class="title main">Welcome to the digital edition of Sir Hans Sloane's Catalogues of
+				his Collections.</p>
 		</div>
-		<div>This archive includes a few examples of editions created using EVT,
-			by default you are showed a small excerpt of the
-			<a href="http://pelavicino.labcd.unipi.it/" target="blank">
-				Codice Pelavicino Digitale edition</a>.
+		<div class="content">
+			<p>This archive contains the digital editions of five of Sir Hans Sloane's catalogues of
+				his collections:</p>
+			<ul>
+				<li><em>Miscellanies</em> is a bound manuscript volume containing individual
+					separate catalogues titled 'Miscellanies'; 'Antiquities'; Seals; 'Pictures';
+					'Mathematical Instruments'; 'Agate Handles' and 'Agate Cups, Bottles, Spoons'
+					with indices to the 'Seals' and to the 'Mathematical Instruments'.</li>
+				<li><em>Fossils V</em> is a bound manuscript volume containing the individual
+					separate catalogues titled ‘Fishes', 'Birds', 'Eggs' and 'Quadrupeds'.</li>
+				<li><em>Fossils I</em> is a bound manuscript volume containing the individual
+					separate catalogues titled ‘Coralls',‘Serpents’, 'Echini', 'Crustacea',
+					'Starrfishes' and 'Humana'.</li>
+				<li><em>MS 3972C Vol. VI</em> is a bound manuscript volume containing a catalogue of
+					books and printed ephemera.</li>
+				<li><em>MS 3972B</em> is a bound manuscript volume containing a catalogue of
+					manuscripts which were collected by Hans Sloane (1660-1753) between 1680 and
+					1753.</li>
+			</ul>
+			<p> These catalogues contain numbered entries that list and describe the vast array of
+				these categories of objects collected by Sir Hans Sloane (1660-1753) between the
+				1680s and the 1750s. </p>
+			<p> This digital edition has been produced as part of the Leverhulme-funded project
+				Enlightenment Architectures: Sir Hans Sloane's catalogues of his collections at The
+				British Museum in association with the Department of Information Studies and Centre
+				for Digital Humanities University College London. Further information about Sir Hans
+				Sloane's collections and catalogues can be found on the Reconstructing Sloane
+				website: <a href="https://reconstructingsloane.org/" target="_blank"
+					>www.reconstructingsloane.org</a>
+			</p>
 		</div>
-		<div>It is recommended to go to full screen mode so that all available screen space is used to show the manuscript images and the transcription text.</div>
-		<div>For more information refer to the EVT Manual available in the "doc" folder.
-			If you have any suggestions or spot an error/bug please contact us at <a href="mailto:evt.developers@gmail.com">evt.developers@gmail.com</a>.</div>
 	</xsl:param>
 
 	<!-- EN: Hide/Show scans -->
@@ -69,7 +93,7 @@
 	<!-- EN: Hide/Show badge -->
 	<!-- IT: Nascondi/Mostra badge -->
 	<!-- default: true() -->
-	<xsl:param name="badge" select="false()"/>
+	<xsl:param name="badge" select="true()"/>
 	<!-- EN: Set text in badge -->
 	<!-- IT: Imposta testo del badge -->
 	<!-- ex: alpha, beta, stable etc -->
@@ -78,7 +102,7 @@
 	<!-- EN: On/Off double page view -->
 	<!-- IT: Attiva/Disattiva vista doppia pagina -->
 	<!-- default: true() -->
-	<xsl:param name="double_view" select="true()"/>
+	<xsl:param name="double_view" select="false()"/>
 
 	<!-- ################ -->
 	<!-- PREFATORY MATTER -->
@@ -92,7 +116,7 @@
 	<!-- EN: On/Off <front> Information -->
 	<!-- IT: Attiva/Disattiva Informazioni del <front> -->
 	<!-- default: true() -->
-	<xsl:param name="frontInfo" select="true()"/>
+	<xsl:param name="frontInfo" select="false()"/>
 
 	<!-- EN: On/Off Manuscript Description -->
 	<!-- IT: Attiva/Disattiva Descrizione del manoscritto-->
@@ -107,7 +131,7 @@
 	<!-- EN: On/Off Bibliography -->
 	<!-- IT: Attiva/Disattiva Bibliografia -->
 	<!-- default: true() -->
-	<xsl:param name="bibliography" select="true()"/>
+	<xsl:param name="bibliography" select="false()"/>
 	
 	<!-- ############## -->
 	<!-- EDITION LEVELS -->
@@ -129,7 +153,7 @@
 
 		<!-- EN: For processing in the modules: $edition_array[1] --> <!-- IT: Per l'elaborazione nei moduli: $edition_array[1] -->
 
-		<edition>Interpretative</edition>
+		<!--<edition>Interpretative</edition>-->
 		<!-- EN: If you have an interpretative edition put <edition>Interpretative</edition>.
 			 	 If you DON'T have an interpretative edition put <edition></edition> -->
 		<!-- IT: Se si ha l'edizione interpretativa scrivere <edition>Interpretative</edition>.
@@ -151,7 +175,7 @@
 	
 	<!-- EN: Enable/Disable translation -->
 	<!-- IT: Attiva/Disattiva traduzione -->
-	<xsl:variable name="translation" select="true()"/> 
+	<xsl:variable name="translation" select="false()"/> 
 
 	<!-- Thumbnail image -->
 	<xsl:variable name="fb_thumb">thumb_fb.jpg</xsl:variable>
@@ -239,12 +263,12 @@
 	<!-- EN: Show/Hide Txt/Img Link Button in interface -->
 	<!-- IT: Mostra/Nascondi pulsante Txt/Img Link nell'interfaccia web -->
 	<!-- default: true() -->
-	<xsl:param name="txtimg_link_button" select="true()"/>
+	<xsl:param name="txtimg_link_button" select="false()"/>
 
 	<!-- EN: Show/Hide Hotspot Button in interface -->
 	<!-- IT: Mostra/Nascondi pulsante Hotspot nell'interfaccia web -->
 	<!-- default: true() -->
-	<xsl:param name="hs_button" select="true()"/>
+	<xsl:param name="hs_button" select="false()"/>
 
 	<!-- EN: Show/Hide Magnifier Button in interface -->
 	<!-- IT: Mostra/Nascondi pulsante Lente di ingrandimento nell'interfaccia web -->
@@ -259,7 +283,7 @@
 	<!-- EN: Show/Hide Viscoll Button in interface -->
 	<!-- IT: Mostra/Nascondi pulsante Viscoll nell'interfaccia web -->
 	<!-- default: false() -->
-	<xsl:param name="viscoll_button" select="true()"/>
+	<xsl:param name="viscoll_button" select="false()"/>
 	
 	<!-- VISCOLL -->
 	<!-- In order to let Viscoll work properly, you need to prepare the collation scheme and the image list, as it is explained in the points 
@@ -291,12 +315,12 @@
 	<!-- IT: Choose page selector position -->
 	<!-- IT: Scegli posizione Selettore pagina -->
 	<!-- "left" or "right" | Default: "right" -->
-	<xsl:param name="pp_selector_pos" select="'left'"/>
+	<xsl:param name="pp_selector_pos" select="'right'"/>
 
 	<!-- EN: Choose whether or not to group pages by document in the selector -->
   <!-- IT: Scegli se raggruppare o meno le pagine per documento nel selettore apposito -->
   <!-- default: true() -->
-  <xsl:param name="pp_selector_doc_grouping" select="true()"/>
+  <xsl:param name="pp_selector_doc_grouping" select="false()"/>
 
   <!-- EN: Choose whether or not having a tooltip on pages option showing the belonging document  -->
   <!-- IT: Scegli se avere un tooltip sulle opzioni delle pagine che mostra il/i documento/i di appartenenza -->
@@ -321,7 +345,7 @@
 	<!-- IT: Stato iniziale della barra di navigazione (considerato solo se $bottom_navbar=true())-->
 	<!-- possible values: 'collapsed' | 'expanded' -->
 	<!-- default: 'collapsed' -->
-	<xsl:param name="bottom_navbar_initial_status" select="'collapsed'"/>
+	<xsl:param name="bottom_navbar_initial_status" select="'expanded'"/>
 
 	<!-- EN: On/Off Document Navigation -->
 	<!-- IT: Attiva/Disattiva navigazione per documento -->
@@ -353,22 +377,22 @@
 	<!-- EN: On/Off orgName list -->
 	<!-- IT: Attiva/disattiva lista organizzazioni -->
 	<!-- default: true() -->
-	<xsl:param name="list_org" select="true()"/>
+	<xsl:param name="list_org" select="false()"/>
 
 	<!-- EN: On/Off term list -->
 	<!-- IT: Attiva/disattiva lista terms -->
 	<!-- default: true() -->
-	<xsl:param name="list_term" select="true()"/>
+	<xsl:param name="list_term" select="false()"/>
 
 	<!-- EN: On/Off gloss list -->
 	<!-- IT: Attiva/disattiva lista glosses -->
 	<!-- default: true() -->
-	<xsl:param name="list_gloss" select="true()"/>
+	<xsl:param name="list_gloss" select="false()"/>
 
 	<!-- EN: On/Off chronological index for texts -->
 	<!-- IT: Attiva/disattiva indice cronologico -->
 	<!-- default: true() -->
-	<xsl:param name="list_doc" select="true()"/>
+	<xsl:param name="list_doc" select="false()"/>
 
 	<!-- EN: It is possibile to personalize the elements in the filter select element that will select and highlight particular (groups of) words.
 			 In order to remove an element from the list in the application just remove the element itself.
@@ -378,17 +402,22 @@
 			 Per aggiungere un elemento alla lista basta sapere che il tag fa riferimento alla classe data all'elemento html con il quale sono state marcate le parole "particolari" da selezionare. -->
 	<xsl:variable name="lists" as="element()*">
 		<group label="NAMED_ENTITIES" active="false">
-			<persName active="true"/>
+			<persName active="false"/>
 			<placeName active="true"/>
-			<orgName active="true"/>
+			<orgName active="false"/>
 		</group>
 		<group label="INTERESTING_ELEMENTS" active="true">
-			<roleName active="true"/>
-			<measure active="true"/>
+			<roleName active="false"/>
+			<measure active="true" label="Measures"/>
+			<measure active="true" label="Quantity" type="quantity" />
 			<date active="true"/>
-			<foreign active="true"/>
+			<foreign active="false"/>
+			<note active="true" label="Notes"/>
+			<bibl active="true" label="Bibl"/>
+			<label active="true" label="Labels"/>
+			<material active="true" label="Materials"/>
 		</group>
-		<group label="STAGES" active="true">
+		<group label="STAGES" active="false">
 			<setting active="true"/>
 			<entrance active="true"/>
 			<exit active="true"/>
