@@ -410,6 +410,12 @@
 			<roleName active="false"/>
 			<foreign active="false"/>
 			
+			<date active="true" label="Date" />	
+			<material active="true" label="Materials"/>
+			<bibl active="true" label="Bibl"/>
+			<author active="true" label="Author" />
+			<pubPlace active="true" label="Publication place" />
+			
 			<measure active="true" label="Measures"/>
 			<measure active="true" label="State" type="state" />
 			<measure active="true" label="Size (weight)" type="sizeWeight" />
@@ -426,11 +432,6 @@
 			<label active="true" label="Catalogue" type="catalogue" />
 			<label active="true" label="Index" type="index" />
 			
-			<date active="true" label="Date" />			
-			<bibl active="true" label="Bibl"/>
-			<material active="true" label="Materials"/>
-			<author active="true" label="Author" />
-			<pubPlace active="true" label="Publication place" />
 		</group>
 		<group label="STAGES" active="false">
 			<setting active="true"/>

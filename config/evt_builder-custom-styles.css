@@ -90,49 +90,77 @@ span[data-tagname = "add"][data-rend = "red"] {
     
 /* PLACE NAMES */
 .option[data-value = "placeName"] .filter_color {
-    color: red;
+    color: #ffc966;
 }
 .doc.current .placeName.no-info.list_active,
 .doc.current .placeName.no-info:hover,
 .doc.current .placeName.list_active span.trigger,
 .doc.current .placeName:hover > span.trigger,
 .doc.current .placeName.opened > span.trigger {
-    background-color: red!important;
+    background-color: #ffc966!important;
 }
 
 /* BIBL */
-.bibl-selector {
+.doc.current span.bibl {
     display: inline;
     font-size: 100%;
     margin: 0;
 }
-.bibl-selector:hover
-.bibl-selector.list_active {
-    background-color: #5593dc;
-}
 .option[data-value = "bibl"] .filter_color {
-    color: #5593dc;
+    color: #aaa19d;
+}
+.doc.current .bibl.no-info.list_active,
+.doc.current .bibl.no-info:hover,
+.doc.current .bibl.list_active span.trigger,
+.doc.current .bibl:hover > span.trigger,
+.doc.current .bibl.opened > span.trigger {
+    background-color: #aaa19d!important;
+}
+/* Author */
+.option[data-value = "author"] .filter_color {
+    color: #ac6f31;
+}
+.doc.current .author.no-info.list_active,
+.doc.current .author.no-info:hover,
+.doc.current .author.list_active span.trigger,
+.doc.current .author:hover > span.trigger,
+.doc.current .author.opened > span.trigger {
+    background-color: #ac6f31!important;
+}
+/* Pubblication place */
+.option[data-value = "pubPlace"] .filter_color {
+    color: #b69383;
+}
+.doc.current .pubPlace.no-info.list_active,
+.doc.current .pubPlace.no-info:hover,
+.doc.current .pubPlace.list_active span.trigger,
+.doc.current .pubPlace:hover > span.trigger,
+.doc.current .pubPlace.opened > span.trigger {
+    background-color: #b69383!important;
 }
 
 /* MATERIALS */
-.material-selector:hover,
-.material-selector.list_active {
-    background-color: #e982e3;
-}
 .option[data-value = "material"] .filter_color {
-    color: #e982e3;
+    color: #ff9949;
+}
+.doc.current .material.no-info.list_active,
+.doc.current .material.no-info:hover,
+.doc.current .material.list_active span.trigger,
+.doc.current .material:hover > span.trigger,
+.doc.current .material.opened > span.trigger {
+    background-color: #ff9949!important;
 }
 
 /* DATES */
+.option[data-value = "date"] .filter_color {
+    color: #6abda8;
+}
 .doc.current span.date.list_active,
 .doc.current span.date:hover,
 .doc.current span.date.list_active span.trigger,
 .doc.current span.date.over > span.trigger,
 .doc.current span.date.opened > span.trigger {
-    background-color: #77ab9e;
-}
-.option[data-value = "date"] .filter_color {
-    color: #77ab9e;
+    background-color: #6abda8;
 }
 
 /** MEASURES **/
@@ -181,7 +209,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 }
 /* Measure format */
 .option[data-value = "measure"][data-type="format"] .filter_color {
-    color: #e8994e;
+    color: #d6bc32;
 }
 .doc.current .measure[data-type="duodecimo"]:hover,
 .doc.current .measure[data-type="duodecimo"]:hover span.trigger,
@@ -203,7 +231,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .doc.current .measure[data-type="quarto"].list_active,
 .doc.current .measure[data-type="quarto"].list_active span.trigger,
 .doc.current .measure[data-type="quarto"].opened span.trigger {
-    background-color: #e8994e;
+    background-color: #d6bc32;
 }
 
 /** NOTES **/
