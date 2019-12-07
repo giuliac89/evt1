@@ -1137,12 +1137,16 @@ function bindFilterOptionClick() {
 				var currEeKey = currFrame.find('.main_ee_select .option[data-value="'+currentEe+'"]').attr('data-key');
 				var foundElements = currFrame.find("." + selectorForActivation + ", ." + currEeKey + "-" + selectorForActivation);
 				
-				if (htmlEl.dataset.type === undefined) {
-					foundElements = currFrame.find("." + selectorForActivation + ".no-info, ." + currEeKey + "-" + selectorForActivation + '.no-info');
+				// If foundElements are not named entities
+				if(htmlEl.dataset.value !== 'placeName' && htmlEl.dataset.value !== 'persName' && htmlEl.dataset.value !== 'orgName') {
+					if (htmlEl.dataset.type === undefined) {
+						foundElements = currFrame.find("." + selectorForActivation + ".no-info, ." + currEeKey + "-" + selectorForActivation + '.no-info');
+					}
+					else {
+						foundElements = currFrame.find("." + selectorForActivation + ":not(.no-info), ." + currEeKey + "-" + selectorForActivation + ':not(.no-info)');
+					}
 				}
-				else {
-					foundElements = currFrame.find("." + selectorForActivation + ":not(.no-info), ." + currEeKey + "-" + selectorForActivation + ':not(.no-info)');
-				}
+				
 				foundElements.toggleClass('list_active');
 				
 				jQueryEl.siblings(".option[data-value='clear']").removeClass('selected');
