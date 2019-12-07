@@ -25,6 +25,14 @@
     margin-bottom: 15px;
 }
 
+/*** Main title ***/
+[data-tagname='head'][data-rend*='main'], 
+[data-tagname='head'][data-type*='main'] [data-tagname='titlePart'][data-rend*='main'], 
+[data-tagname='titlePart'][data-type*='main'] {
+    font-size: 130%!important;
+    margin-bottom: 20px;
+}
+
 /*** Inline notes ***/
 .popup.image,
 #front_cont .front > .title.original {

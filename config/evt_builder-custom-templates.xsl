@@ -6,6 +6,7 @@
     xmlns:xd="http://www.pnp-software.com/XSLTdoc" 
     xmlns:fn="http://www.w3.org/2005/xpath-functions"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:ea="http://www.enlightenmentarchitectures.org"
     xmlns="http://www.w3.org/1999/xhtml"
     exclude-result-prefixes="#all">
         
@@ -71,4 +72,12 @@
         </xsl:choose>
     </xsl:template>
 
+    <!-- Handle <ea:catnum> -->
+    <xsl:template match="ea:catnum" mode="interp dipl #default" priority="9">
+        <xsl:element name="span">
+            <xsl:attribute name="class" select="substring-after(name(), ':')"/>
+            <xsl:call-template name="dataAttributesFromAttributes"/>
+            <xsl:apply-templates mode="#current"/>
+        </xsl:element>
+    </xsl:template>
 </xsl:stylesheet>
