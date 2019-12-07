@@ -1142,8 +1142,15 @@ function bindFilterOptionClick() {
 					if (htmlEl.dataset.type === undefined) {
 						foundElements = currFrame.find("." + selectorForActivation + ".no-info, ." + currEeKey + "-" + selectorForActivation + '.no-info');
 					}
-					else {
-						foundElements = currFrame.find("." + selectorForActivation + ":not(.no-info), ." + currEeKey + "-" + selectorForActivation + ':not(.no-info)');
+					if (htmlEl.dataset.type !== undefined) {
+						// Custom for interesting elements with type format (to select different type with the same label)
+						if (htmlEl.dataset.type === 'format') {
+							selectorForActivation = jQueryEl.attr('data-value') + '[data-label*="' + dataAttr + '"]';
+							foundElements = currFrame.find("." + selectorForActivation + "[data-label='format'], ." + currEeKey + "-" + selectorForActivation + "[data-label='format']");
+						}
+						else {
+							foundElements = currFrame.find("." + selectorForActivation + ":not(.no-info), ." + currEeKey + "-" + selectorForActivation + ':not(.no-info)');
+						}
 					}
 				}
 				
