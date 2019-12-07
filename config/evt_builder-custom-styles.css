@@ -99,14 +99,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .doc.current .placeName.opened > span.trigger {
     background-color: red!important;
 }
-/*  Notes */
-.option[data-value = "note"] .filter_color {
-    color: lightblue;
-}
-.note-selector:hover,
-.note-selector.list_active {
-    background-color: lightblue;
-}
+
 /* Bibl */
 .bibl-selector {
     display: inline;
@@ -120,6 +113,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .option[data-value = "bibl"] .filter_color {
     color: #5593dc;
 }
+
 /* Materials */
 .material-selector:hover,
 .material-selector.list_active {
@@ -128,6 +122,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .option[data-value = "material"] .filter_color {
     color: #e982e3;
 }
+
 /* Labels */
 .label-selector:hover,
 .label-selector.list_active {
@@ -136,7 +131,20 @@ span[data-tagname = "add"][data-rend = "red"] {
 .option[data-value = "label"] .filter_color {
     color: #8cdbda;
 }
-/* Measure */
+
+/* Dates */
+.doc.current span.date.list_active,
+.doc.current span.date:hover,
+.doc.current span.date.list_active span.trigger,
+.doc.current span.date.over > span.trigger,
+.doc.current span.date.opened > span.trigger {
+    background-color: #77ab9e;
+}
+.option[data-value = "date"] .filter_color {
+    color: #77ab9e;
+}
+
+/** Measure **/
 .option[data-value = "measure"] .filter_color {
     color: #E8E674;
 }
@@ -146,7 +154,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .doc.current .measure.no-info.list_active span.trigger {
     background-color: #E8E674;
 }
-/* Quantity measure */
+/* Measure quantity */
 .option[data-value = "measure"][data-type="quantity"] .filter_color {
     /* color: #CFA2EF; */
     color: #ffd700;
@@ -158,7 +166,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .doc.current .measure[data-type="quantity"].opened span.trigger {
     background-color: #ffd700
 }
-/* sizeWeight measure */
+/* Measure sizeWeight */
 .option[data-value = "measure"][data-type="sizeWeight"] .filter_color {
     color: #98cc0f;
 }
@@ -169,7 +177,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .doc.current .measure[data-type="sizeWeight"].opened span.trigger {
     background-color: #98cc0f;
 }
-/* state measure */
+/* Measure state */
 .option[data-value = "measure"][data-type="state"] .filter_color {
     color: #e5cba4;
 }
@@ -180,7 +188,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .doc.current .measure[data-type="state"].opened span.trigger {
     background-color: #e5cba4;
 }
-/* format measure */
+/* Measure format */
 .option[data-value = "measure"][data-type="format"] .filter_color {
     color: #e8994e;
 }
@@ -207,14 +215,40 @@ span[data-tagname = "add"][data-rend = "red"] {
     background-color: #e8994e;
 }
 
-/* Dates */
-.doc.current span.date.list_active,
-.doc.current span.date:hover,
-.doc.current span.date.list_active span.trigger,
-.doc.current span.date.over > span.trigger,
-.doc.current span.date.opened > span.trigger {
-    background-color: #77ab9e;
+/** Notes **/
+span.note {
+    display: inline;
 }
-.option[data-value = "date"] .filter_color {
-    color: #77ab9e;
+/*  Note colour */
+.option[data-value = "note"][data-type="colour"] .filter_color {
+    color: #c4e5ef;
+}
+.doc.current .note[data-type="colour"]:hover,
+.doc.current .note[data-type="colour"]:hover span.trigger,
+.doc.current .note[data-type="colour"].list_active,
+.doc.current .note[data-type="colour"].list_active span.trigger,
+.doc.current .note[data-type="colour"].opened span.trigger {
+    background-color: #c4e5ef;
+}
+/*  Note texture */
+.option[data-value = "note"][data-type="texture"] .filter_color {
+    color: #7fb5cb;
+}
+.doc.current .note[data-type="texture"]:hover,
+.doc.current .note[data-type="texture"]:hover span.trigger,
+.doc.current .note[data-type="texture"].list_active,
+.doc.current .note[data-type="texture"].list_active span.trigger,
+.doc.current .note[data-type="texture"].opened span.trigger {
+    background-color: #7fb5cb;
+}
+/*  Note value */
+.option[data-value = "note"][data-type="value"] .filter_color {
+    color: #80bafd;
+}
+.doc.current .note[data-type="value"]:hover,
+.doc.current .note[data-type="value"]:hover span.trigger,
+.doc.current .note[data-type="value"].list_active,
+.doc.current .note[data-type="value"].list_active span.trigger,
+.doc.current .note[data-type="value"].opened span.trigger {
+    background-color: #80bafd;
 }
