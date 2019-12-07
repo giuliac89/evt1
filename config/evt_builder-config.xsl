@@ -408,14 +408,29 @@
 		</group>
 		<group label="INTERESTING_ELEMENTS" active="true">
 			<roleName active="false"/>
-			<measure active="true" label="Measures"/>
-			<measure active="true" label="Quantity" type="quantity" />
-			<date active="true"/>
 			<foreign active="false"/>
-			<note active="true" label="Notes"/>
+			
+			<measure active="true" label="Measures"/>
+			<measure active="true" label="State" type="state" />
+			<measure active="true" label="Size (weight)" type="sizeWeight" />
+			<measure active="true" label="Quantity" type="quantity" />
+			<measure active="true" label="Format" type="format"/>
+			
+			<note active="true" label="Colour" type="colour" />
+			<note active="true" label="Texture" type="texture" />
+			<note active="true" label="Value" type="value" />
+				
+			<label active="true" label="Section title" type="sectionTitle" />
+			<label active="true" label="Main title" type="mainTitle" />
+			<label active="true" label="Section head" type="sectionHead" />
+			<label active="true" label="Catalogue" type="catalogue" />
+			<label active="true" label="Index" type="index" />
+			
+			<date active="true" label="Date" />			
 			<bibl active="true" label="Bibl"/>
-			<label active="true" label="Labels"/>
 			<material active="true" label="Materials"/>
+			<author active="true" label="Author" />
+			<pubPlace active="true" label="Publication place" />
 		</group>
 		<group label="STAGES" active="false">
 			<setting active="true"/>

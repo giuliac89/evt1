@@ -87,19 +87,17 @@ span[data-tagname = "add"][data-rend = "red"] {
 .like_select .option {
     line-height: 22px;
 }
-span.popup {
-    display: inline;
-}
+    
 /* Place names */
-.doc.current span.placeName.no-info.list_active,
-.doc.current span.placeName.no-info:hover,
-.doc.current span.placeName.list_active span.trigger,
-.doc.current span.placeName.over > span.trigger,
-.doc.current span.placeName.opened > span.trigger {
-    background-color: #ffd27f;
-}
 .option[data-value = "placeName"] .filter_color {
-    color: #ffd27f;
+    color: red;
+}
+.doc.current .placeName.no-info.list_active,
+.doc.current .placeName.no-info:hover,
+.doc.current .placeName.list_active span.trigger,
+.doc.current .placeName:hover > span.trigger,
+.doc.current .placeName.opened > span.trigger {
+    background-color: red!important;
 }
 /*  Notes */
 .option[data-value = "note"] .filter_color {
@@ -139,30 +137,76 @@ span.popup {
     color: #8cdbda;
 }
 /* Measure */
-.measure-selector:not([data-type]).no-info.list_active,
-.measure-selector:not([data-type]).no-info:hover,
-.measure-selector:not([data-type]).list_active,
-.measure-selector:not([data-type]).list_active span.trigger,
-.measure-selector:not([data-type]).over > span.trigger,
-.measure-selector:not([data-type]).opened > span.trigger {
-    background-color: #E8E674!important;
-    cursor: initial!important;
-}
 .option[data-value = "measure"] .filter_color {
     color: #E8E674;
 }
+.doc.current .measure.no-info:hover,
+.doc.current .measure.no-info:hover span.trigger,
+.doc.current .measure.no-info.list_active,
+.doc.current .measure.no-info.list_active span.trigger {
+    background-color: #E8E674;
+}
 /* Quantity measure */
-.measure-selector[data-type="quantity"].no-info.list_active,
-.measure-selector[data-type="quantity"].no-info:hover,
-.measure-selector[data-type="quantity"].list_active,
-.measure-selector[data-type="quantity"].list_active span.trigger,
-.measure-selector[data-type="quantity"].over > span.trigger,
-.measure-selector[data-type="quantity"].opened > span.trigger {
-    background-color: #CFA2EF!important;
-}
 .option[data-value = "measure"][data-type="quantity"] .filter_color {
-    color: #CFA2EF;
+    /* color: #CFA2EF; */
+    color: #ffd700;
 }
+.doc.current .measure[data-type="quantity"]:hover,
+.doc.current .measure[data-type="quantity"]:hover span.trigger,
+.doc.current .measure[data-type="quantity"].list_active,
+.doc.current .measure[data-type="quantity"].list_active span.trigger,
+.doc.current .measure[data-type="quantity"].opened span.trigger {
+    background-color: #ffd700
+}
+/* sizeWeight measure */
+.option[data-value = "measure"][data-type="sizeWeight"] .filter_color {
+    color: #98cc0f;
+}
+.doc.current .measure[data-type="sizeWeight"]:hover,
+.doc.current .measure[data-type="sizeWeight"]:hover span.trigger,
+.doc.current .measure[data-type="sizeWeight"].list_active,
+.doc.current .measure[data-type="sizeWeight"].list_active span.trigger,
+.doc.current .measure[data-type="sizeWeight"].opened span.trigger {
+    background-color: #98cc0f;
+}
+/* state measure */
+.option[data-value = "measure"][data-type="state"] .filter_color {
+    color: #e5cba4;
+}
+.doc.current .measure[data-type="state"]:hover,
+.doc.current .measure[data-type="state"]:hover span.trigger,
+.doc.current .measure[data-type="state"].list_active,
+.doc.current .measure[data-type="state"].list_active span.trigger,
+.doc.current .measure[data-type="state"].opened span.trigger {
+    background-color: #e5cba4;
+}
+/* format measure */
+.option[data-value = "measure"][data-type="format"] .filter_color {
+    color: #e8994e;
+}
+.doc.current .measure[data-type="duodecimo"]:hover,
+.doc.current .measure[data-type="duodecimo"]:hover span.trigger,
+.doc.current .measure[data-type="duodecimo"].list_active,
+.doc.current .measure[data-type="duodecimo"].list_active span.trigger,
+.doc.current .measure[data-type="duodecimo"].opened span.trigger,
+.doc.current .measure[data-type="octavo"]:hover,
+.doc.current .measure[data-type="octavo"]:hover span.trigger,
+.doc.current .measure[data-type="octavo"].list_active,
+.doc.current .measure[data-type="octavo"].list_active span.trigger,
+.doc.current .measure[data-type="octavo"].opened span.trigger,
+.doc.current .measure[data-type="folio"]:hover,
+.doc.current .measure[data-type="folio"]:hover span.trigger,
+.doc.current .measure[data-type="folio"].list_active,
+.doc.current .measure[data-type="folio"].list_active span.trigger,
+.doc.current .measure[data-type="folio"].opened span.trigger,
+.doc.current .measure[data-type="quarto"]:hover,
+.doc.current .measure[data-type="quarto"]:hover span.trigger,
+.doc.current .measure[data-type="quarto"].list_active,
+.doc.current .measure[data-type="quarto"].list_active span.trigger,
+.doc.current .measure[data-type="quarto"].opened span.trigger {
+    background-color: #e8994e;
+}
+
 /* Dates */
 .doc.current span.date.list_active,
 .doc.current span.date:hover,
