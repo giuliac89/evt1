@@ -420,9 +420,9 @@
 			<note active="true" label="Texture" type="texture" />
 			<note active="true" label="Value" type="value" />
 				
+			<label active="true" label="Section head" type="sectionHead" />
 			<label active="true" label="Section title" type="sectionTitle" />
 			<label active="true" label="Main title" type="mainTitle" />
-			<label active="true" label="Section head" type="sectionHead" />
 			<label active="true" label="Catalogue" type="catalogue" />
 			<label active="true" label="Index" type="index" />
 			
