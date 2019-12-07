@@ -18,8 +18,29 @@
     <!-- In order to make it work properly you need to add mode="interp dipl #default" to each template -->
     
     <!-- Handle interesting elements -->
-    <xsl:template match="tei:note | tei:bibl | tei:material | tei:label | tei:measure" mode="interp dipl #default" priority="9">
+    <xsl:template match="tei:note | tei:bibl | tei:material | tei:label | tei:measure | tei:author | tei:pubPlace" mode="interp dipl #default" priority="9">
         <xsl:choose>
+            <xsl:when test="self::tei:measure[@type='duodecimo'] | self::tei:measure[@type='octavo'] | self::tei:measure[@type='folio'] | self::tei:measure[@type='quarto']">
+                <xsl:element name="span">
+                    <xsl:attribute name="class"
+                        select="concat('popup ', name())"/>
+                    <xsl:attribute name="data-label">format</xsl:attribute>
+                    <xsl:call-template name="dataAttributesFromAttributes"/>
+                    <xsl:element name="span">
+                        <xsl:attribute name="class">trigger</xsl:attribute>
+                        <xsl:apply-templates mode="#current"/>
+                    </xsl:element>
+                    <xsl:element name="span">
+                        <xsl:attribute name="class">tooltip</xsl:attribute>
+                        <xsl:element name="span">
+                            <xsl:attribute name="class">before</xsl:attribute>
+                        </xsl:element>
+                        <xsl:text> (</xsl:text>
+                        <xsl:value-of select="@type"/>
+                        <xsl:text>) </xsl:text>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:when>
             <xsl:when test="@type">
                 <xsl:element name="span">
                     <xsl:attribute name="class"

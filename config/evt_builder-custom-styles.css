@@ -87,90 +87,247 @@ span[data-tagname = "add"][data-rend = "red"] {
 .like_select .option {
     line-height: 22px;
 }
-span.popup {
-    display: inline;
-}
-/* Place names */
-.doc.current span.placeName.no-info.list_active,
-.doc.current span.placeName.no-info:hover,
-.doc.current span.placeName.list_active span.trigger,
-.doc.current span.placeName.over > span.trigger,
-.doc.current span.placeName.opened > span.trigger {
-    background-color: #ffd27f;
-}
+    
+/* PLACE NAMES */
 .option[data-value = "placeName"] .filter_color {
-    color: #ffd27f;
+    color: #ffc966;
 }
-/*  Notes */
-.option[data-value = "note"] .filter_color {
-    color: lightblue;
+.doc.current .placeName.no-info.list_active,
+.doc.current .placeName.no-info:hover,
+.doc.current .placeName.list_active span.trigger,
+.doc.current .placeName:hover > span.trigger,
+.doc.current .placeName.opened > span.trigger {
+    background-color: #ffc966!important;
 }
-.note-selector:hover,
-.note-selector.list_active {
-    background-color: lightblue;
-}
-/* Bibl */
-.bibl-selector {
+
+/* BIBL */
+.doc.current span.bibl {
     display: inline;
     font-size: 100%;
     margin: 0;
 }
-.bibl-selector:hover
-.bibl-selector.list_active {
-    background-color: #5593dc;
-}
 .option[data-value = "bibl"] .filter_color {
-    color: #5593dc;
+    color: #aaa19d;
 }
-/* Materials */
-.material-selector:hover,
-.material-selector.list_active {
-    background-color: #e982e3;
+.doc.current .bibl.no-info.list_active,
+.doc.current .bibl.no-info:hover,
+.doc.current .bibl.list_active span.trigger,
+.doc.current .bibl:hover > span.trigger,
+.doc.current .bibl.opened > span.trigger {
+    background-color: #aaa19d!important;
 }
+/* Author */
+.option[data-value = "author"] .filter_color {
+    color: #ac6f31;
+}
+.doc.current .author.no-info.list_active,
+.doc.current .author.no-info:hover,
+.doc.current .author.list_active span.trigger,
+.doc.current .author:hover > span.trigger,
+.doc.current .author.opened > span.trigger {
+    background-color: #ac6f31!important;
+}
+/* Pubblication place */
+.option[data-value = "pubPlace"] .filter_color {
+    color: #b69383;
+}
+.doc.current .pubPlace.no-info.list_active,
+.doc.current .pubPlace.no-info:hover,
+.doc.current .pubPlace.list_active span.trigger,
+.doc.current .pubPlace:hover > span.trigger,
+.doc.current .pubPlace.opened > span.trigger {
+    background-color: #b69383!important;
+}
+
+/* MATERIALS */
 .option[data-value = "material"] .filter_color {
-    color: #e982e3;
+    color: #ff9949;
 }
-/* Labels */
-.label-selector:hover,
-.label-selector.list_active {
-    background-color: #8cdbda;
+.doc.current .material.no-info.list_active,
+.doc.current .material.no-info:hover,
+.doc.current .material.list_active span.trigger,
+.doc.current .material:hover > span.trigger,
+.doc.current .material.opened > span.trigger {
+    background-color: #ff9949!important;
 }
-.option[data-value = "label"] .filter_color {
-    color: #8cdbda;
+
+/* DATES */
+.option[data-value = "date"] .filter_color {
+    color: #6abda8;
 }
-/* Measure */
-.measure-selector:not([data-type]).no-info.list_active,
-.measure-selector:not([data-type]).no-info:hover,
-.measure-selector:not([data-type]).list_active,
-.measure-selector:not([data-type]).list_active span.trigger,
-.measure-selector:not([data-type]).over > span.trigger,
-.measure-selector:not([data-type]).opened > span.trigger {
-    background-color: #E8E674!important;
-    cursor: initial!important;
-}
-.option[data-value = "measure"] .filter_color {
-    color: #E8E674;
-}
-/* Quantity measure */
-.measure-selector[data-type="quantity"].no-info.list_active,
-.measure-selector[data-type="quantity"].no-info:hover,
-.measure-selector[data-type="quantity"].list_active,
-.measure-selector[data-type="quantity"].list_active span.trigger,
-.measure-selector[data-type="quantity"].over > span.trigger,
-.measure-selector[data-type="quantity"].opened > span.trigger {
-    background-color: #CFA2EF!important;
-}
-.option[data-value = "measure"][data-type="quantity"] .filter_color {
-    color: #CFA2EF;
-}
-/* Dates */
 .doc.current span.date.list_active,
 .doc.current span.date:hover,
 .doc.current span.date.list_active span.trigger,
 .doc.current span.date.over > span.trigger,
 .doc.current span.date.opened > span.trigger {
-    background-color: #77ab9e;
+    background-color: #6abda8;
 }
-.option[data-value = "date"] .filter_color {
-    color: #77ab9e;
+
+/** MEASURES **/
+.option[data-value = "measure"] .filter_color {
+    color: #E8E674;
+}
+.doc.current .measure.no-info:hover,
+.doc.current .measure.no-info:hover span.trigger,
+.doc.current .measure.no-info.list_active,
+.doc.current .measure.no-info.list_active span.trigger {
+    background-color: #E8E674;
+}
+/* Measure quantity */
+.option[data-value = "measure"][data-type="quantity"] .filter_color {
+    /* color: #CFA2EF; */
+    color: #ffd700;
+}
+.doc.current .measure[data-type="quantity"]:hover,
+.doc.current .measure[data-type="quantity"]:hover span.trigger,
+.doc.current .measure[data-type="quantity"].list_active,
+.doc.current .measure[data-type="quantity"].list_active span.trigger,
+.doc.current .measure[data-type="quantity"].opened span.trigger {
+    background-color: #ffd700
+}
+/* Measure sizeWeight */
+.option[data-value = "measure"][data-type="sizeWeight"] .filter_color {
+    color: #98cc0f;
+}
+.doc.current .measure[data-type="sizeWeight"]:hover,
+.doc.current .measure[data-type="sizeWeight"]:hover span.trigger,
+.doc.current .measure[data-type="sizeWeight"].list_active,
+.doc.current .measure[data-type="sizeWeight"].list_active span.trigger,
+.doc.current .measure[data-type="sizeWeight"].opened span.trigger {
+    background-color: #98cc0f;
+}
+/* Measure state */
+.option[data-value = "measure"][data-type="state"] .filter_color {
+    color: #e5cba4;
+}
+.doc.current .measure[data-type="state"]:hover,
+.doc.current .measure[data-type="state"]:hover span.trigger,
+.doc.current .measure[data-type="state"].list_active,
+.doc.current .measure[data-type="state"].list_active span.trigger,
+.doc.current .measure[data-type="state"].opened span.trigger {
+    background-color: #e5cba4;
+}
+/* Measure format */
+.option[data-value = "measure"][data-type="format"] .filter_color {
+    color: #d6bc32;
+}
+.doc.current .measure[data-type="duodecimo"]:hover,
+.doc.current .measure[data-type="duodecimo"]:hover span.trigger,
+.doc.current .measure[data-type="duodecimo"].list_active,
+.doc.current .measure[data-type="duodecimo"].list_active span.trigger,
+.doc.current .measure[data-type="duodecimo"].opened span.trigger,
+.doc.current .measure[data-type="octavo"]:hover,
+.doc.current .measure[data-type="octavo"]:hover span.trigger,
+.doc.current .measure[data-type="octavo"].list_active,
+.doc.current .measure[data-type="octavo"].list_active span.trigger,
+.doc.current .measure[data-type="octavo"].opened span.trigger,
+.doc.current .measure[data-type="folio"]:hover,
+.doc.current .measure[data-type="folio"]:hover span.trigger,
+.doc.current .measure[data-type="folio"].list_active,
+.doc.current .measure[data-type="folio"].list_active span.trigger,
+.doc.current .measure[data-type="folio"].opened span.trigger,
+.doc.current .measure[data-type="quarto"]:hover,
+.doc.current .measure[data-type="quarto"]:hover span.trigger,
+.doc.current .measure[data-type="quarto"].list_active,
+.doc.current .measure[data-type="quarto"].list_active span.trigger,
+.doc.current .measure[data-type="quarto"].opened span.trigger {
+    background-color: #d6bc32;
+}
+
+/** NOTES **/
+span.note {
+    display: inline;
+}
+/*  Note colour */
+.option[data-value = "note"][data-type="colour"] .filter_color {
+    color: #c4e5ef;
+}
+.doc.current .note[data-type="colour"]:hover,
+.doc.current .note[data-type="colour"]:hover span.trigger,
+.doc.current .note[data-type="colour"].list_active,
+.doc.current .note[data-type="colour"].list_active span.trigger,
+.doc.current .note[data-type="colour"].opened span.trigger {
+    background-color: #c4e5ef;
+}
+/*  Note texture */
+.option[data-value = "note"][data-type="texture"] .filter_color {
+    color: #7fb5cb;
+}
+.doc.current .note[data-type="texture"]:hover,
+.doc.current .note[data-type="texture"]:hover span.trigger,
+.doc.current .note[data-type="texture"].list_active,
+.doc.current .note[data-type="texture"].list_active span.trigger,
+.doc.current .note[data-type="texture"].opened span.trigger {
+    background-color: #7fb5cb;
+}
+/*  Note value */
+.option[data-value = "note"][data-type="value"] .filter_color {
+    color: #80bafd;
+}
+.doc.current .note[data-type="value"]:hover,
+.doc.current .note[data-type="value"]:hover span.trigger,
+.doc.current .note[data-type="value"].list_active,
+.doc.current .note[data-type="value"].list_active span.trigger,
+.doc.current .note[data-type="value"].opened span.trigger {
+    background-color: #80bafd;
+}
+
+/* LABELS */
+span.label {
+    display: inline;
+}
+/*  Label sectionHead */
+.option[data-value = "label"][data-type="sectionHead"] .filter_color {
+    color: #ed9be8;
+}
+.doc.current .label[data-type="sectionHead"]:hover,
+.doc.current .label[data-type="sectionHead"]:hover span.trigger,
+.doc.current .label[data-type="sectionHead"].list_active,
+.doc.current .label[data-type="sectionHead"].list_active span.trigger,
+.doc.current .label[data-type="sectionHead"].opened span.trigger {
+    background-color: #ed9be8;
+}
+/*  Label sectionTitle */
+.option[data-value = "label"][data-type="sectionTitle"] .filter_color {
+    color: #c99cc9;
+}
+.doc.current .label[data-type="sectionTitle"]:hover,
+.doc.current .label[data-type="sectionTitle"]:hover span.trigger,
+.doc.current .label[data-type="sectionTitle"].list_active,
+.doc.current .label[data-type="sectionTitle"].list_active span.trigger,
+.doc.current .label[data-type="sectionTitle"].opened span.trigger {
+    background-color: #c99cc9;
+}
+/*  Label mainTitle */
+.option[data-value = "label"][data-type="mainTitle"] .filter_color {
+    color: #f8d9f6;
+}
+.doc.current .label[data-type="mainTitle"]:hover,
+.doc.current .label[data-type="mainTitle"]:hover span.trigger,
+.doc.current .label[data-type="mainTitle"].list_active,
+.doc.current .label[data-type="mainTitle"].list_active span.trigger,
+.doc.current .label[data-type="mainTitle"].opened span.trigger {
+    background-color: #f8d9f6;
+}
+/*  Label catalogue */
+.option[data-value = "label"][data-type="catalogue"] .filter_color {
+    color: #d264fb;
+}
+.doc.current .label[data-type="catalogue"]:hover,
+.doc.current .label[data-type="catalogue"]:hover span.trigger,
+.doc.current .label[data-type="catalogue"].list_active,
+.doc.current .label[data-type="catalogue"].list_active span.trigger,
+.doc.current .label[data-type="catalogue"].opened span.trigger {
+    background-color: #d264fb;
+}
+/*  Label index */
+.option[data-value = "label"][data-type="index"] .filter_color {
+    color: #ae94f2;
+}
+.doc.current .label[data-type="index"]:hover,
+.doc.current .label[data-type="index"]:hover span.trigger,
+.doc.current .label[data-type="index"].list_active,
+.doc.current .label[data-type="index"].list_active span.trigger,
+.doc.current .label[data-type="index"].opened span.trigger {
+    background-color: #ae94f2;
 }
