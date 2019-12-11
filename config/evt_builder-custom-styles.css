@@ -5,7 +5,6 @@
  
  /*** Welcome box ***/
 #welcomeInfo {
-    height: 100%;
     overflow: auto;
 }
 #welcomeInfo_content_bottom {
@@ -23,6 +22,11 @@
 }
 .dialog .content p {
     margin-bottom: 15px;
+}
+
+/*** Global ***/
+#text_elem, #text_elem-add, #regesto, #regesto-add {
+    top: 20px;
 }
 
 /*** Main title ***/
@@ -49,22 +53,25 @@
 }
 
 /*** Additions and deletions ***/
-span[data-tagname = "del"][data-rend = "strikethrough"] {
+span.dipl-add {
+    background-color: #bdecb6;
+}
+span[data-tagname = 'del'][data-rend = 'strikethrough'] {
     background-color: transparent;
     text-decoration: line-through;
 }
-span[data-tagname = "add"][data-rend = "underline"] {
-    background-color: transparent;
-    text-decoration: underline;
+span[data-tagname = 'add'][data-rend = 'underline'],
+span[data-tagname = 'add'][data-type = 'underline'] {
+    background-color: transparent!important;
+    text-decoration: underline!important;
 }
-span.dipl-add,
-span[data-tagname = "add"][data-rend = "pencil"] {
+span[data-tagname = 'add'][data-rend = 'pencil'] {
     background-color: #bdecb6;
 }
-span[data-tagname = "add"][data-rend = "ink"] {
+span[data-tagname = 'add'][data-rend = 'ink'] {
     background-color: #d8d8d8;
 }
-span[data-tagname = "add"][data-rend = "red"] {
+span[data-tagname = 'add'][data-rend = 'red'] {
     background-color: #ffa5a5;
 }
 
@@ -75,7 +82,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 .catnum:before {
     content: '';
     display: block;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 /*** Selectors ***/
@@ -97,7 +104,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 }
     
 /* PLACE NAMES */
-.option[data-value = "placeName"] .filter_color {
+.option[data-value = 'placeName'] .filter_color {
     color: #ffc966;
 }
 .doc.current .placeName.no-info.list_active,
@@ -114,7 +121,7 @@ span[data-tagname = "add"][data-rend = "red"] {
     font-size: 100%;
     margin: 0;
 }
-.option[data-value = "bibl"] .filter_color {
+.option[data-value = 'bibl'] .filter_color {
     color: #aaa19d;
 }
 .doc.current .bibl.no-info.list_active,
@@ -125,7 +132,7 @@ span[data-tagname = "add"][data-rend = "red"] {
     background-color: #aaa19d!important;
 }
 /* Author */
-.option[data-value = "author"] .filter_color {
+.option[data-value = 'author'] .filter_color {
     color: #ac6f31;
 }
 .doc.current .author.no-info.list_active,
@@ -136,7 +143,7 @@ span[data-tagname = "add"][data-rend = "red"] {
     background-color: #ac6f31!important;
 }
 /* Pubblication place */
-.option[data-value = "pubPlace"] .filter_color {
+.option[data-value = 'pubPlace'] .filter_color {
     color: #b69383;
 }
 .doc.current .pubPlace.no-info.list_active,
@@ -148,7 +155,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 }
 
 /* MATERIALS */
-.option[data-value = "material"] .filter_color {
+.option[data-value = 'material'] .filter_color {
     color: #ff9949;
 }
 .doc.current .material.no-info.list_active,
@@ -160,7 +167,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 }
 
 /* DATES */
-.option[data-value = "date"] .filter_color {
+.option[data-value = 'date'] .filter_color {
     color: #6abda8;
 }
 .doc.current span.date.list_active,
@@ -172,7 +179,7 @@ span[data-tagname = "add"][data-rend = "red"] {
 }
 
 /** MEASURES **/
-.option[data-value = "measure"] .filter_color {
+.option[data-value = 'measure'] .filter_color {
     color: #E8E674;
 }
 .doc.current .measure.no-info:hover,
@@ -182,63 +189,63 @@ span[data-tagname = "add"][data-rend = "red"] {
     background-color: #E8E674;
 }
 /* Measure quantity */
-.option[data-value = "measure"][data-type="quantity"] .filter_color {
+.option[data-value = 'measure'][data-type='quantity'] .filter_color {
     /* color: #CFA2EF; */
     color: #ffd700;
 }
-.doc.current .measure[data-type="quantity"]:hover,
-.doc.current .measure[data-type="quantity"]:hover span.trigger,
-.doc.current .measure[data-type="quantity"].list_active,
-.doc.current .measure[data-type="quantity"].list_active span.trigger,
-.doc.current .measure[data-type="quantity"].opened span.trigger {
+.doc.current .measure[data-type='quantity']:hover,
+.doc.current .measure[data-type='quantity']:hover span.trigger,
+.doc.current .measure[data-type='quantity'].list_active,
+.doc.current .measure[data-type='quantity'].list_active span.trigger,
+.doc.current .measure[data-type='quantity'].opened span.trigger {
     background-color: #ffd700
 }
 /* Measure sizeWeight */
-.option[data-value = "measure"][data-type="sizeWeight"] .filter_color {
+.option[data-value = 'measure'][data-type='sizeWeight'] .filter_color {
     color: #98cc0f;
 }
-.doc.current .measure[data-type="sizeWeight"]:hover,
-.doc.current .measure[data-type="sizeWeight"]:hover span.trigger,
-.doc.current .measure[data-type="sizeWeight"].list_active,
-.doc.current .measure[data-type="sizeWeight"].list_active span.trigger,
-.doc.current .measure[data-type="sizeWeight"].opened span.trigger {
+.doc.current .measure[data-type='sizeWeight']:hover,
+.doc.current .measure[data-type='sizeWeight']:hover span.trigger,
+.doc.current .measure[data-type='sizeWeight'].list_active,
+.doc.current .measure[data-type='sizeWeight'].list_active span.trigger,
+.doc.current .measure[data-type='sizeWeight'].opened span.trigger {
     background-color: #98cc0f;
 }
 /* Measure state */
-.option[data-value = "measure"][data-type="state"] .filter_color {
+.option[data-value = 'measure'][data-type='state'] .filter_color {
     color: #e5cba4;
 }
-.doc.current .measure[data-type="state"]:hover,
-.doc.current .measure[data-type="state"]:hover span.trigger,
-.doc.current .measure[data-type="state"].list_active,
-.doc.current .measure[data-type="state"].list_active span.trigger,
-.doc.current .measure[data-type="state"].opened span.trigger {
+.doc.current .measure[data-type='state']:hover,
+.doc.current .measure[data-type='state']:hover span.trigger,
+.doc.current .measure[data-type='state'].list_active,
+.doc.current .measure[data-type='state'].list_active span.trigger,
+.doc.current .measure[data-type='state'].opened span.trigger {
     background-color: #e5cba4;
 }
 /* Measure format */
-.option[data-value = "measure"][data-type="format"] .filter_color {
+.option[data-value = 'measure'][data-type='format'] .filter_color {
     color: #d6bc32;
 }
-.doc.current .measure[data-type="duodecimo"]:hover,
-.doc.current .measure[data-type="duodecimo"]:hover span.trigger,
-.doc.current .measure[data-type="duodecimo"].list_active,
-.doc.current .measure[data-type="duodecimo"].list_active span.trigger,
-.doc.current .measure[data-type="duodecimo"].opened span.trigger,
-.doc.current .measure[data-type="octavo"]:hover,
-.doc.current .measure[data-type="octavo"]:hover span.trigger,
-.doc.current .measure[data-type="octavo"].list_active,
-.doc.current .measure[data-type="octavo"].list_active span.trigger,
-.doc.current .measure[data-type="octavo"].opened span.trigger,
-.doc.current .measure[data-type="folio"]:hover,
-.doc.current .measure[data-type="folio"]:hover span.trigger,
-.doc.current .measure[data-type="folio"].list_active,
-.doc.current .measure[data-type="folio"].list_active span.trigger,
-.doc.current .measure[data-type="folio"].opened span.trigger,
-.doc.current .measure[data-type="quarto"]:hover,
-.doc.current .measure[data-type="quarto"]:hover span.trigger,
-.doc.current .measure[data-type="quarto"].list_active,
-.doc.current .measure[data-type="quarto"].list_active span.trigger,
-.doc.current .measure[data-type="quarto"].opened span.trigger {
+.doc.current .measure[data-type='duodecimo']:hover,
+.doc.current .measure[data-type='duodecimo']:hover span.trigger,
+.doc.current .measure[data-type='duodecimo'].list_active,
+.doc.current .measure[data-type='duodecimo'].list_active span.trigger,
+.doc.current .measure[data-type='duodecimo'].opened span.trigger,
+.doc.current .measure[data-type='octavo']:hover,
+.doc.current .measure[data-type='octavo']:hover span.trigger,
+.doc.current .measure[data-type='octavo'].list_active,
+.doc.current .measure[data-type='octavo'].list_active span.trigger,
+.doc.current .measure[data-type='octavo'].opened span.trigger,
+.doc.current .measure[data-type='folio']:hover,
+.doc.current .measure[data-type='folio']:hover span.trigger,
+.doc.current .measure[data-type='folio'].list_active,
+.doc.current .measure[data-type='folio'].list_active span.trigger,
+.doc.current .measure[data-type='folio'].opened span.trigger,
+.doc.current .measure[data-type='quarto']:hover,
+.doc.current .measure[data-type='quarto']:hover span.trigger,
+.doc.current .measure[data-type='quarto'].list_active,
+.doc.current .measure[data-type='quarto'].list_active span.trigger,
+.doc.current .measure[data-type='quarto'].opened span.trigger {
     background-color: #d6bc32;
 }
 
@@ -247,36 +254,36 @@ span.note {
     display: inline;
 }
 /*  Note colour */
-.option[data-value = "note"][data-type="colour"] .filter_color {
+.option[data-value = 'note'][data-type='colour'] .filter_color {
     color: #c4e5ef;
 }
-.doc.current .note[data-type="colour"]:hover,
-.doc.current .note[data-type="colour"]:hover span.trigger,
-.doc.current .note[data-type="colour"].list_active,
-.doc.current .note[data-type="colour"].list_active span.trigger,
-.doc.current .note[data-type="colour"].opened span.trigger {
+.doc.current .note[data-type='colour']:hover,
+.doc.current .note[data-type='colour']:hover span.trigger,
+.doc.current .note[data-type='colour'].list_active,
+.doc.current .note[data-type='colour'].list_active span.trigger,
+.doc.current .note[data-type='colour'].opened span.trigger {
     background-color: #c4e5ef;
 }
 /*  Note texture */
-.option[data-value = "note"][data-type="texture"] .filter_color {
+.option[data-value = 'note'][data-type='texture'] .filter_color {
     color: #7fb5cb;
 }
-.doc.current .note[data-type="texture"]:hover,
-.doc.current .note[data-type="texture"]:hover span.trigger,
-.doc.current .note[data-type="texture"].list_active,
-.doc.current .note[data-type="texture"].list_active span.trigger,
-.doc.current .note[data-type="texture"].opened span.trigger {
+.doc.current .note[data-type='texture']:hover,
+.doc.current .note[data-type='texture']:hover span.trigger,
+.doc.current .note[data-type='texture'].list_active,
+.doc.current .note[data-type='texture'].list_active span.trigger,
+.doc.current .note[data-type='texture'].opened span.trigger {
     background-color: #7fb5cb;
 }
 /*  Note value */
-.option[data-value = "note"][data-type="value"] .filter_color {
+.option[data-value = 'note'][data-type='value'] .filter_color {
     color: #80bafd;
 }
-.doc.current .note[data-type="value"]:hover,
-.doc.current .note[data-type="value"]:hover span.trigger,
-.doc.current .note[data-type="value"].list_active,
-.doc.current .note[data-type="value"].list_active span.trigger,
-.doc.current .note[data-type="value"].opened span.trigger {
+.doc.current .note[data-type='value']:hover,
+.doc.current .note[data-type='value']:hover span.trigger,
+.doc.current .note[data-type='value'].list_active,
+.doc.current .note[data-type='value'].list_active span.trigger,
+.doc.current .note[data-type='value'].opened span.trigger {
     background-color: #80bafd;
 }
 
@@ -285,57 +292,57 @@ span.label {
     display: inline;
 }
 /*  Label sectionHead */
-.option[data-value = "label"][data-type="sectionHead"] .filter_color {
+.option[data-value = 'label'][data-type='sectionHead'] .filter_color {
     color: #ed9be8;
 }
-.doc.current .label[data-type="sectionHead"]:hover,
-.doc.current .label[data-type="sectionHead"]:hover span.trigger,
-.doc.current .label[data-type="sectionHead"].list_active,
-.doc.current .label[data-type="sectionHead"].list_active span.trigger,
-.doc.current .label[data-type="sectionHead"].opened span.trigger {
+.doc.current .label[data-type='sectionHead']:hover,
+.doc.current .label[data-type='sectionHead']:hover span.trigger,
+.doc.current .label[data-type='sectionHead'].list_active,
+.doc.current .label[data-type='sectionHead'].list_active span.trigger,
+.doc.current .label[data-type='sectionHead'].opened span.trigger {
     background-color: #ed9be8;
 }
 /*  Label sectionTitle */
-.option[data-value = "label"][data-type="sectionTitle"] .filter_color {
+.option[data-value = 'label'][data-type='sectionTitle'] .filter_color {
     color: #c99cc9;
 }
-.doc.current .label[data-type="sectionTitle"]:hover,
-.doc.current .label[data-type="sectionTitle"]:hover span.trigger,
-.doc.current .label[data-type="sectionTitle"].list_active,
-.doc.current .label[data-type="sectionTitle"].list_active span.trigger,
-.doc.current .label[data-type="sectionTitle"].opened span.trigger {
+.doc.current .label[data-type='sectionTitle']:hover,
+.doc.current .label[data-type='sectionTitle']:hover span.trigger,
+.doc.current .label[data-type='sectionTitle'].list_active,
+.doc.current .label[data-type='sectionTitle'].list_active span.trigger,
+.doc.current .label[data-type='sectionTitle'].opened span.trigger {
     background-color: #c99cc9;
 }
 /*  Label mainTitle */
-.option[data-value = "label"][data-type="mainTitle"] .filter_color {
+.option[data-value = 'label'][data-type='mainTitle'] .filter_color {
     color: #f8d9f6;
 }
-.doc.current .label[data-type="mainTitle"]:hover,
-.doc.current .label[data-type="mainTitle"]:hover span.trigger,
-.doc.current .label[data-type="mainTitle"].list_active,
-.doc.current .label[data-type="mainTitle"].list_active span.trigger,
-.doc.current .label[data-type="mainTitle"].opened span.trigger {
+.doc.current .label[data-type='mainTitle']:hover,
+.doc.current .label[data-type='mainTitle']:hover span.trigger,
+.doc.current .label[data-type='mainTitle'].list_active,
+.doc.current .label[data-type='mainTitle'].list_active span.trigger,
+.doc.current .label[data-type='mainTitle'].opened span.trigger {
     background-color: #f8d9f6;
 }
 /*  Label catalogue */
-.option[data-value = "label"][data-type="catalogue"] .filter_color {
+.option[data-value = 'label'][data-type='catalogue'] .filter_color {
     color: #d264fb;
 }
-.doc.current .label[data-type="catalogue"]:hover,
-.doc.current .label[data-type="catalogue"]:hover span.trigger,
-.doc.current .label[data-type="catalogue"].list_active,
-.doc.current .label[data-type="catalogue"].list_active span.trigger,
-.doc.current .label[data-type="catalogue"].opened span.trigger {
+.doc.current .label[data-type='catalogue']:hover,
+.doc.current .label[data-type='catalogue']:hover span.trigger,
+.doc.current .label[data-type='catalogue'].list_active,
+.doc.current .label[data-type='catalogue'].list_active span.trigger,
+.doc.current .label[data-type='catalogue'].opened span.trigger {
     background-color: #d264fb;
 }
 /*  Label index */
-.option[data-value = "label"][data-type="index"] .filter_color {
+.option[data-value = 'label'][data-type='index'] .filter_color {
     color: #ae94f2;
 }
-.doc.current .label[data-type="index"]:hover,
-.doc.current .label[data-type="index"]:hover span.trigger,
-.doc.current .label[data-type="index"].list_active,
-.doc.current .label[data-type="index"].list_active span.trigger,
-.doc.current .label[data-type="index"].opened span.trigger {
+.doc.current .label[data-type='index']:hover,
+.doc.current .label[data-type='index']:hover span.trigger,
+.doc.current .label[data-type='index'].list_active,
+.doc.current .label[data-type='index'].list_active span.trigger,
+.doc.current .label[data-type='index'].opened span.trigger {
     background-color: #ae94f2;
 }

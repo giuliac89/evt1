@@ -535,7 +535,8 @@
 			<xsl:attribute name="class" select="'ul_list'"/>
 			<xsl:for-each select="$root//tei:listPerson/person">
 				<xsl:sort select="lower-case(tei:persName/tei:forename)" order="ascending"/>
-				<xsl:sort select="lower-case(tei:persName/tei:name)" order="ascending"/>
+				<xsl:sort select="lower-case(tei:persName/tei:name | tei:persName/tei:surname)" order="ascending"/>
+				<xsl:sort select="lower-case(tei:persName[1])" order="ascending"/>
 				<xsl:element name="li">
 					<xsl:attribute name="id" select="@xml:id"/>
 					<xsl:attribute name="class" select="'list_element'"/>
@@ -565,7 +566,7 @@
 			<xsl:attribute name="id" select="'ul_listPlace'"/>
 			<xsl:attribute name="class" select="'ul_list'"/>
 			<xsl:for-each select="$root//tei:listPlace/place">
-				<xsl:sort select="lower-case(tei:settlement)" order="ascending"/>
+				<xsl:sort select="lower-case(tei:settlement | tei:placeName[1])" order="ascending"/>
 				<xsl:element name="li">
 					<xsl:attribute name="id" select="@xml:id"/>
 					<xsl:attribute name="class" select="'list_element'"/>
