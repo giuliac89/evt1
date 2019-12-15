@@ -80,4 +80,77 @@
             <xsl:apply-templates mode="#current"/>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="tei:msContents" mode="interp dipl #default" priority="9">
+        <div id="msContents">
+            <div class="title_section">
+                <span lang="def">MANUSCRIPT_CONTENTS</span>
+            </div>
+            <div class="table">
+                <xsl:if test="tei:summary and tei:summary/normalize-space() != ''">
+                    <div class="row">
+                        <div class="left_col">
+                            <span lang="def">MANUSCRIPT_CONTENT_SUMMARY</span><xsl:text>:</xsl:text>
+                        </div>
+                        <div class="right_col"><xsl:value-of select="tei:summary"/></div>
+                    </div>
+                </xsl:if>
+                <xsl:if test="//tei:textLang and //tei:textLang/normalize-space() != ''">
+                    <div class="row">
+                        <div class="left_col">
+                            <span lang="def">LANGUAGE</span><xsl:text>:</xsl:text>
+                        </div>
+                        <div class="right_col"><xsl:value-of select="//tei:textLang"/></div>
+                    </div>  
+                </xsl:if>
+                <xsl:if test="//tei:msItem"><!--and tei:msItem/normalize-space() != ''">-->
+                    <div class="row">
+                        <div class="left_col">
+                            <span lang="def">MANUSCRIPT_ITEMS</span><xsl:text>:</xsl:text>
+                        </div>
+                        <div class="right_col">
+                            <xsl:for-each select="tei:msItem">
+                                <div class="msItem">
+                                    <xsl:if test="tei:locus and tei:title">
+                                        <div class="block">
+                                            <xsl:value-of select="tei:locus"/>
+                                            <xsl:text>: </xsl:text>
+                                            <xsl:value-of select="tei:title"/>	
+                                        </div>
+                                    </xsl:if>
+                                    <xsl:if test="tei:incipit">
+                                        <div class="block">
+                                            <span lang="def">INCIPIT</span><xsl:text>: </xsl:text>
+                                            <xsl:value-of select="tei:incipit"/>	
+                                        </div>
+                                    </xsl:if>
+                                    <xsl:if test="tei:explicit">
+                                        <div class="block">
+                                            <span lang="def">EXPLICIT</span><xsl:text>: </xsl:text>
+                                            <xsl:value-of select="tei:explicit"/>
+                                        </div>
+                                    </xsl:if>
+                                    <xsl:if test="tei:colophon">
+                                        <div class="block">
+                                            <xsl:for-each select="tei:colophon//node()">
+                                                <xsl:if test="self::tei:ptr[@type='external']">
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="href" select="self::tei:ptr/@target" />
+                                                        <xsl:attribute name="target">_blank</xsl:attribute>
+                                                        <xsl:value-of select="self::tei:ptr/@target"/>
+                                                    </xsl:element>
+                                                </xsl:if>
+                                                <xsl:value-of select="."/>
+                                            </xsl:for-each>
+                                        </div>
+                                    </xsl:if>
+                                </div>
+                            </xsl:for-each>
+                        </div>
+                    </div>
+                </xsl:if>
+            </div>
+        </div>
+    </xsl:template>
+    
 </xsl:stylesheet>
